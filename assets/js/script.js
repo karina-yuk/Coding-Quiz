@@ -4,15 +4,19 @@ var quizEl = document.querySelector(".quiz");
 var score = 0;
 var timeleft = 60;
 var index = 0;
+var choicesEl = document.querySelector(".choices");
+
+
 
 //Create questions
 var questions = [
-  { question: "question 1", choices: ["a", "b", "c", "d"], correct: "a" },
-  { question: "question 2", choices: ["a", "b", "c", "d"], correct: "c" },
-  { question: "question 3", choices: ["a", "b", "c", "d"], correct: "b" },
-  { question: "question 4", choices: ["a", "b", "c", "d"], correct: "a" },
-  { question: "question 5", choices: ["a", "b", "c", "d"], correct: "d" },
-  { question: "question 6", choices: ["a", "b", "c", "d"], correct: "b" },
+  { question: "What does JS stand for?", choices: ["JavaSpace", "JavaScript", "JavaScope", "JavaSite"], correct: "JavaScript" },
+  { question: "Javascript is an _______ language?", choices: ["object-Based", "Procedural", "Object-Oriented", "None of the above"], correct: "Object-Oriented" },
+  { question: "Which of the following keywords is used to define a variable in Javascript?", choices: ["let", "var", "Both a and b", "None of the above"], correct: "Both a and b" },
+  { question: "Which of the following are closures in Javascript?", choices: ["Variables", "Objects", "Functions", "All of the above"], correct: "All of the above" },
+  { question: "How do we write a comment in javascript?", choices: ["//", ":", "#", "$="], correct: "//" },
+  { question: "Which of the following are JavaScript Data Types?", choices: ["String", "Number", "Undefined", "All of the above"], correct: "All of the above" },
+
 ];
 
 //Ask question function
