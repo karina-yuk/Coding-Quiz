@@ -1,0 +1,28 @@
+* {
+  background-color: rgb(200, 186, 173);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0%;
+  margin: 0%;
+  width: 100%;
+}
+
+header {
+  display: flex;
+}
+
+header h1 {
+  font-weight: lighter;
+  margin: 20px;
+  font-size: 18px;
+}
+main {
+  width: 200px;
+  margin: 0px auto;
+}
+.start-btn {
+  font-size: 20px;
+}
+
+.hide {
+  display: none;
+}
