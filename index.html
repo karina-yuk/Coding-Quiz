@@ -8,18 +8,40 @@
   </head>
   <body>
     <header>
-      <h1 id="high-scores">View high scores</h1>
-      <h1 id="time">Time: <span id="countdown"> </span></h1>
+      <input type="button" id="highscorelink" value="View Highscores">
+        <div class="timer"><p>Time:<p id="countdown">0</p></p></div>
     </header>
     <main class="container">
-      <div class="start">
-        <button class="start-btn">Start</button>
+      <section class="startpage">
+      <h1>Coding Quiz</h1>
+      <p id="steps">
+        Answer the following code-related quiz. There is a time limit and for each incorrect question answered 10 seconds will be deduct from timer.
+      </p>
+      <input type="button" value="Start" id="start-btn" class="start-btn">
+    </section>
+      <d class="start">
       </div>
       <div class="quiz hide">
         <h2 id="title">Question 1</h2>
         <div class="choices"></div>
       </div>
       <div class="end hide"></div>
+      <div class="endpage">
+        <h1>All done!</h1>
+        <div class="quizresult">
+            <p>Your score is: </p>
+            <p class="recentscore">0</p>
+        </div>
+        <label for="initials">Enter initials:</label>
+        <input type="text" id="initials" value="AA">
+        <input type="button" value="Save your score" id="submitscore" class="button">
+    </div>
+    <div class="highscorepage">
+        <h1>Highscores</h1>
+        <ol id="scorelist"></ol>
+        <input type="button" value="Start over" id="startover" class="button">
+        <input type="button" value="Clear highscores" id="clearscore" class="button">
+    </div>
     </main>
     <script src="./assets/js/script.js"></script>
   </body>
