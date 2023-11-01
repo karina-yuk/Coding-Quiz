@@ -1,13 +1,12 @@
 * {
   justify-content: center;
-  font-family:Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 
 .timer {
@@ -19,15 +18,15 @@ header {
 .button {
   margin-top: 30px;
   font: arial;
-  font-weight:bolder;
+  font-weight: bolder;
   padding: 10px;
-  background-color: rgb(171, 150, 127);
-  color: rgb(0, 0, 0);
+  background-color: rgb(93, 52, 5);
+  color: white;
   border-radius: 5px;
 }
 
 .button:hover {
-  background-color: rgb(211, 196, 184);
+  background-color: rgb(152, 84, 6);
 }
 
 main {
@@ -56,13 +55,20 @@ main {
 
 .start-btn {
   margin: 5px;
-  font-weight:bolder;
+  font-weight: bolder;
   padding: 10px 30px;
-  background-color: rgb(180, 141, 180);
-  color: rgb(0, 0, 0);
-  border-radius: 8px;
+  background-color: rgb(93, 52, 5);
+  color: white;
+  border-radius: 5px;
 }
 
+#highscorebtn {
+  background-color: rgb(93, 52, 5);
+  color: white;
+  font-weight: bolder;
+  border-radius: 5px;
+  padding: 10px 30px;
+}
 .endpage {
   display: none;
   flex-direction: column;
@@ -79,7 +85,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  outline: 5px solid rgb(87, 56, 87);
+  outline: 5px solid rgb(164, 164, 209);
 }
 
 .recentscore {
@@ -92,13 +98,4 @@ main {
   flex-direction: column;
   width: 30vw;
   margin: 10px;
-}
-
-#highscorelink {  margin: 5px;
-  font-weight:bolder;
-  padding: 10px 30px;
-  background-color: rgb(180, 141, 180);
-  color: rgb(0, 0, 0);
-  border-radius: 8px;
-
 }
