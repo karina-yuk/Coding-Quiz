@@ -5,16 +5,16 @@ This is a multiple choice quiz on JavaScript. When the user press start the quiz
 
 ## Application Sample
 1. The start page. To start teh quiz press start button.
-<img src="./assets/images/Screenshot 2023-11-01 010604.png">
+<img src="./images/Screenshot 2023-11-01 012417.png">
 
 2. Answer questions.
-<img src="./assets/images/Screenshot 2023-11-01 010729.png">
+<img src="./images/Screenshot 2023-11-01 012754.png">
 
 3. Input initial and save it in highscore page.
-<img src="./assets/images/Screenshot 2023-11-01 011412.png">
+<img src="./images/Screenshot 2023-11-01 013119.png">
 
 4. Scores can be viewed in highscore page.
-<img src="./assets/images/Screenshot 2023-11-01 003909.png">
+<img src="./images/Screenshot 2023-11-01 012849.png">
 
 
 ## Deployed App
