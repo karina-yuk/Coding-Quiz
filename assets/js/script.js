@@ -32,28 +32,28 @@ function countdown() {
 // Create questions, choices, and correct answer
 var title = [
   {
-    question: "What does JS stand for?",
+    question: "1. What does JS stand for?",
     choices: ["JavaSpace", "JavaScript", "JavaScope", "JavaSite"],
     correct: "JavaScript",
   },
   {
     question:
-      "Which of the following keywords is used to define a variable in Javascript?",
+      "2. Which of the following keywords is used to define a variable in Javascript?",
     choices: ["let", "var", "Both a and b", "None of the above"],
     correct: "Both a and b",
   },
   {
-    question: "Which of the following are closures in Javascript?",
+    question: "3. Which of the following are closures in Javascript?",
     choices: ["Variables", "Objects", "Functions", "All of the above"],
     correct: "All of the above",
   },
   {
-    question: "How do we write a comment in javascript?",
+    question: "4. How do we write a comment in javascript?",
     choices: ["//", ":", "#", "$="],
     correct: "//",
   },
   {
-    question: "Which of the following are JavaScript Data Types?",
+    question: "5. Which of the following are JavaScript Data Types?",
     choices: ["String", "Number", "Undefined", "All of the above"],
     correct: "All of the above",
   },
