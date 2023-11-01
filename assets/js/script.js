@@ -1,3 +1,4 @@
+//Variables
 var startBtn = document.querySelector("#start-btn");
 var startPage = document.querySelector(".startpage");
 var quizEl = document.querySelector(".quiz");
@@ -11,23 +12,24 @@ var saveScore = document.querySelector("#submitscore");
 var scoreList = document.querySelector("#scorelist");
 var clearScore = document.querySelector("#clearscore");
 var tryAgain = document.querySelector("#startover");
+var choicesEl = document.querySelector(".choices");
+
 var countdownTimer = document.querySelector("#countdown");
 var timeLeft = "75";
-
+//Countdown function
 function countdown() {
   var timeInterval = setInterval(() => {
     countdownTimer.innerHTML = timeLeft;
     if (timeLeft < 1) {
       countdownTimer.innerHTML = "0";
       clearInterval(timeInterval);
-      renderEnd();
     } else {
       timeLeft--;
     }
   }, 1000);
 }
 
-// Object including the questions, choices, and correct answer
+// Create questions, choices, and correct answer
 var title = [
   {
     question: "What does JS stand for?",
@@ -57,43 +59,43 @@ var title = [
   },
 ];
 
-var score = 0;
-var timeleft = 60;
-var index = 0;
-var choicesEl = document.querySelector(".choices");
+var quizText = document.querySelector("#title");
+var choiceOne = document.querySelector("#choice1");
+var choiceTwo = document.querySelector("#choice2");
+var choiceThree = document.querySelector("#choice3");
+var choiceFour = document.querySelector("#choice4");
+var verifyAnswer = document.querySelector(".verifyAnswer");
 
-//Ask question function
-function askquestion() {
-  countdown()
-  choicesEl.innerHTML = "";
-  //show question 1
-  var titleEl = document.querySelector("#title");
-  titleEl.textContent = questions[index].question;
-  //create a button for each choice
-  questions[index].choices.forEach(function (choice) {
-    var btn = document.createElement("button");
-    btn.textContent = choice;
-    btn.setAttribute("value", choice);
-    btn.addEventListener("click", function () {
-      if (this.value === questions[index].correct) {
-        score++;
-      } else {
-        timeleft -= 10;
-      }
-      index++;
-      askquestion();
-      if (currentIndex < title.length) {
-        askquestion();
-      } else {
-        renderEnd();
-      }
-    });
-    choicesEl.appendChild(btn);
-  });
+var index = 0;
+
+function renderQuestion() {
+  countdown();
+  quizText.textContent = title[index].question;
+  choiceOne.value = title[index].choices[0];
+  choiceTwo.value = title[index].choices[1];
+  choiceThree.value = title[index].choices[2];
+  choiceFour.value = title[index].choices[3];
+}
+
+function nextQuestion(event) {
+  var correctOption = title[index].correct;
+  var selectedOption = event.target.value;
+  if (correctOption === selectedOption) {
+    verifyAnswer.textContent = "Correct!";
+  } else {
+    verifyAnswer.textContent = "Wrong!";
+    timeLeft -= 10;
+  }
+  index++;
+  if (index < title.length) {
+    renderQuestion();
+  } else {
+    renderEnd();
+  }
 }
 
 function renderEnd() {
-  quiz.style.display = "none";
+  quizEl.style.display = "none";
   endPage.style.display = "flex";
   newScore = Number(timeLeft);
   recentScore.textContent = newScore;
@@ -123,7 +125,7 @@ function renderHighScores() {
 
 function startOver() {
   startPage.style.display = "flex";
-  quiz.style.display = "none";
+  quizEl.style.display = "none";
   endPage.style.display = "none";
   scorePage.style.display = "none";
 }
@@ -132,26 +134,26 @@ function clearList() {
   localStorage.clear();
 }
 
-// View Highscores Link
+// View highscores button
 scoreLink.addEventListener("click", function () {
   startPage.style.display = "none";
-  quiz.style.display = "none";
+  quizEl.style.display = "none";
   endPage.style.display = "none";
   scorePage.style.display = "flex";
 });
 
-// Button to begin the quiz
+// Start buttojn
 startBtn.addEventListener("click", function () {
   startPage.style.display = "none";
-  quiz.style.display = "flex";
+  quizEl.style.display = "flex";
   renderQuestion();
 });
 
 // User selects their answer using buttons
-optionOne.addEventListener("click", nextQuestion);
-optionTwo.addEventListener("click", nextQuestion);
-optionThree.addEventListener("click", nextQuestion);
-optionFour.addEventListener("click", nextQuestion);
+choiceOne.addEventListener("click", nextQuestion);
+choiceTwo.addEventListener("click", nextQuestion);
+choiceThree.addEventListener("click", nextQuestion);
+choiceFour.addEventListener("click", nextQuestion);
 
 // Reload Home page to try again
 tryAgain.addEventListener("click", startOver);
